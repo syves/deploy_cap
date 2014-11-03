@@ -1,0 +1,4 @@
+<%= form_for [@question, @answer], remote: true do |f| %>
+  Full Answer: <%= f.text_area :content %> <br />
+  <%= f.submit %>
+<% end %>

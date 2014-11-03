@@ -1,0 +1,1 @@
+A recreation of Stack overflow build with a rails framework, with non standard views.

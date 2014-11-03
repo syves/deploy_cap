@@ -1,0 +1,5 @@
+<%= form_for(@question, remote: true) do |f| %>
+  Title: <%= f.text_field :title %> <br />
+  Full description: <%= f.text_area :content %> <br />
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,3 @@
+<li><%= link_to content_tag(:i,nil, :class=>"fa fa-chevron-up vote_arrow"),upvote_question_answer_path(@question, answer), method: :post, remote: true %>
+<%= link_to content_tag(:i,nil, :class=>"fa fa-chevron-down vote_arrow"), downvote_question_answer_path(@question, answer), method: :post, remote: true %>  <span id="answer-<%=answer.id%>"><%= answer.votes %> </span> -- <%=  answer.content %>
+</li>

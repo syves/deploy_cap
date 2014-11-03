@@ -1,0 +1,12 @@
+<h3>Create New Question   </h3>
+<%= render 'form' %>
+<h3>All questions</h3>
+<ul class="question_list">
+<% @questions.order('created_at').each do |question| %>
+<%= render partial: "list", locals: {question: question} %>
+<% end %>
+</ul>
+<div id='quote'>
+  <h1><%= @response %></h1>
+</div>
+

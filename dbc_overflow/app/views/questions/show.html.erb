@@ -1,0 +1,17 @@
+<h3><%= link_to content_tag(:i,nil, :class=>"fa fa-chevron-up vote_arrow"), upvote_question_path(@question), method: :post, remote: true %>
+
+<%= link_to content_tag(:i,nil, :class=>"fa fa-chevron-down vote_arrow"), downvote_question_path(@question), method: :post, remote: true %><span id="question-<%= @question.id %>"> <%= @question.votes %></span> -- <%= @question.title %></h3>
+<%= @question.content %>
+
+ </span>
+
+<h3>Answer this question</h3>
+<%= render 'answers/form' %>
+<h3>Answers</h3>
+<ul class="answers_list">
+  <% @question.answers.order('created_at').each do |answer| %>
+    <%= render partial: 'answers/list', locals: {answer: answer}%>
+  <% end %>
+</ul>
+<%= link_to 'Destroy', question_path(@question), method: :delete, data: {confirm: 'Are you sure?'} %>
+
